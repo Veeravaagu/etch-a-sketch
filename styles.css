@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1440px;
+    height: 815px;
+
+}
+
+#board-container {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* background-color: black; */
+    /* border: 1px solid black; */
+}
