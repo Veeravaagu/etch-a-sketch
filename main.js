@@ -19,10 +19,11 @@ blackButton.addEventListener('click', ()=>{colorPicker = 2;});
 rainbowButton.addEventListener('click',()=>{colorPicker = 3;});
 
 divBoard.addEventListener('mousemove', function (event){
+    
     clearButton.addEventListener('click',()=>{
-        event.target.style.backgroundColor = null;})})
-// clearButton.addEventListener('click',()=>{colorPicker = 4;
-// });
+        
+        event.target.style.backgroundColor = null;
+        colorPicker = 0;})})
 
 function size (number,measurements) {
 
