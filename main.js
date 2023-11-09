@@ -1,4 +1,4 @@
-let colorPicker;
+let buttonPicker;
 
 let divBoard = document.querySelector('#board-container');
 
@@ -12,20 +12,21 @@ let clearButton = document.querySelector('.clearButton');
 
 let sizeofBoard = prompt("Enter the number of squares that you want");
 
-eraserButton.addEventListener('click', ()=>{colorPicker = 1;}); 
+eraserButton.addEventListener('click', ()=>{buttonPicker = 1;}); 
 
-blackButton.addEventListener('click', ()=>{colorPicker = 2;});
+blackButton.addEventListener('click', ()=>{buttonPicker = 2;});
 
-rainbowButton.addEventListener('click',()=>{colorPicker = 3;});
+rainbowButton.addEventListener('click',()=>{buttonPicker = 3;});
 
 divBoard.addEventListener('mousemove', function (event){
     
     clearButton.addEventListener('click',()=>{
         
         event.target.style.backgroundColor = null;
-        colorPicker = 0;})})
+        
+        buttonPicker = 0;})})
 
-function size (number,measurements) {
+function getSize (number,measurements) {
 
     number =  sizeofBoard;
 
@@ -42,6 +43,8 @@ function size (number,measurements) {
             square.setAttribute('id',`${i + 1}divSquare`);
     
             square.style.border = '0.5px solid black';
+
+            square.style.borderRadius = `${number/(number/2)}px`;
             
             square.style.width = `${measurements}px`;
             
@@ -59,33 +62,26 @@ function size (number,measurements) {
                                                 
             {
             
-                if (e.target.id === `${i + 1}divSquare` && colorPicker === 1) 
+                if (e.target.id === `${i + 1}divSquare` && buttonPicker === 1) 
             
                 {square.style.backgroundColor = 'white';}
                 
-                else if(e.target.id === `${i + 1}divSquare` && colorPicker === 2)
+                else if(e.target.id === `${i + 1}divSquare` && buttonPicker === 2)
 
                 {square.style.backgroundColor = 'black';}
 
-                else if(e.target.id === `${i + 1}divSquare` && colorPicker === 3)
+                else if(e.target.id === `${i + 1}divSquare` && buttonPicker === 3)
 
                 {e.target.style.backgroundColor = `rgb(${randRed}, ${randGreen}, ${randBlue})`;}
                 
 
-            }
-            )
+            })}
+    }
+    else{
+        prompt("Enter a number less than 100 and above 0, no invalid numbers allowed!")}
+}
 
-        }
-                                        
-    }
-    else
-    
-    {
-        prompt("Enter a number less than 100 and above 0, no invalid numbers allowed!")
-    }
-                                            
-    }
-size();
+getSize();
 
 
 
